@@ -36,6 +36,7 @@ function HeroBanner() {
       <Banner>
         <Stack
           width="400px"
+          maxWidth="1250px"
           sx={{ width: { xl: "1488px" } }}
           m="auto"
           style={{ height: "100vh", placeContent: "center" }}
@@ -49,7 +50,7 @@ function HeroBanner() {
           >
             Fitness club
           </p>
-          <h1 style={{ fontSize: "13rem" }}>
+          <h1 style={{ fontSize: "11rem" }}>
             be one step
             <br /> ahead
           </h1>

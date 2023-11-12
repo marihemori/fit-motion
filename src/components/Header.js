@@ -32,7 +32,8 @@ function Navbar() {
         justifyContent="space-between"
         alignItems="center"
         width="400px"
-        sx={{ width: { xl: "1488px" } }}
+        maxWidth="1250px"
+        sx={{ width: { xl: "1250px" } }}
         m="auto"
       >
         <Link to="/">
