@@ -10,15 +10,23 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
       className="bodyPart-card"
       style={{ cursor: "pointer" }}
       sx={{
-        borderTop: bodyPart === item ? "4px solid #ff2321" : "",
+        borderTop: bodyPart === item ? "4px solid #01C7F3" : "",
         backgroundColor: "#000000",
         color: "#ffffff",
-        width: "270px",
-        height: "280px",
+        width: "240px",
+        height: "240px",
         gap: "2rem",
+        borderBottomLeftRadius: "20px",
+        borderBottomRightRadius: "20px",
+      }}
+      onClick={() => {
+        setBodyPart(item);
+        window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
       }}
     >
-      <Typography>{item}</Typography>
+      <Typography fontSize="2rem" textTransform="capitalize" fontWeight="Bold">
+        {item}
+      </Typography>
     </Stack>
   );
 };

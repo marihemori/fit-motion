@@ -2,23 +2,22 @@ import React from "react";
 import { Box } from "@mui/material";
 import "react-horizontal-scrolling-menu/dist/styles.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Scrollbar } from "swiper/modules";
+import { Pagination, A11y } from "swiper/modules";
+
+// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
 // Components
 import BodyPart from "./BodyPart";
 
-const HorizontalScrollbar = ({ data, bodyPart, setBodyPart }) => {
+const HorizontalScrollbar = ({ data, bodyParts, bodyPart, setBodyPart }) => {
   return (
     <Swiper
-      modules={[Pagination, Scrollbar]}
+      modules={[Pagination, A11y]}
       spaceBetween={10}
       slidesPerView={4}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
-      navigation
-      scrollbar={{ draggable: true }}
+      pagination={{ clickable: true }}
       className="mySwiper"
     >
       {data.map((item) => (
@@ -31,8 +30,8 @@ const HorizontalScrollbar = ({ data, bodyPart, setBodyPart }) => {
           >
             <BodyPart
               item={item}
-              bodyPart={bodyPart}
               setBodyPart={setBodyPart}
+              bodyPart={bodyPart}
             />
           </Box>
         </SwiperSlide>
