@@ -10,14 +10,11 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
       className="bodyPart-card"
       style={{ cursor: "pointer" }}
       sx={{
-        borderTop: bodyPart === item ? "4px solid #01C7F3" : "",
-        backgroundColor: "#000000",
-        color: "#ffffff",
+        borderTop: bodyPart === item ? "4px solid #007AFF" : "",
         width: "240px",
         height: "240px",
         gap: "2rem",
         borderBottomLeftRadius: "20px",
-        borderBottomRightRadius: "20px",
       }}
       onClick={() => {
         setBodyPart(item);

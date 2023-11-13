@@ -85,7 +85,7 @@ function SearchExercises({ setExercises, bodyPart, setBodyPart }) {
       <HorizontalScrollBar
         data={bodyParts}
         bodyPart={bodyPart}
-        setBodyParts={setBodyPart}
+        setBodyPart={setBodyPart}
       />
     </Stack>
   );
