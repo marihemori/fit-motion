@@ -53,12 +53,19 @@ function SearchExercises({ setExercises, bodyPart, setBodyPart }) {
   };
 
   return (
-    <Stack alignItems="center" m="10rem" justifyContent="center">
+    <Stack
+      alignItems="center"
+      justifyContent="center"
+      width="400px"
+      maxWidth="1250px"
+      sx={{ width: { xl: "1488px" } }}
+      m="auto"
+    >
       <Typography
         fontWeight={700}
         sx={{ fontSize: { lg: "4rem", xs: "2rem" } }}
         textAlign="center"
-        mb="6rem"
+        m="6rem"
       >
         Awesome exercises you <br /> should know
       </Typography>
