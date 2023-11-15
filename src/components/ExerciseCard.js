@@ -10,8 +10,8 @@ const ExerciseCard = ({ exercise }) => {
         <Button
           sx={{
             ml: "21px",
-            color: "#fff",
-            background: "#ff1919",
+            color: "#000000",
+            background: "#007AFF",
             fontSize: "14px",
             borderRadius: "20px",
             textTransform: "capitalize",
@@ -22,7 +22,7 @@ const ExerciseCard = ({ exercise }) => {
         <Button
           sx={{
             ml: "21px",
-            color: "#fff",
+            color: "#000000",
             background: "#fcc757",
             fontSize: "14px",
             borderRadius: "20px",
@@ -39,7 +39,7 @@ const ExerciseCard = ({ exercise }) => {
         mt="11px"
         pb="10px"
         textTransform="capitalize"
-        fontSize="22px"
+        fontSize="1.5rem"
       >
         {exercise.name}
       </Typography>

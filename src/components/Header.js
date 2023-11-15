@@ -7,9 +7,6 @@ import Logo from "../assets/images/fit-motion-logo.svg";
 
 const Header = styled.header`
   background-color: #000000;
-  box-shadow: 0px 11px 51px 5px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 11px 51px 5px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 11px 51px 5px rgba(0, 0, 0, 0.75);
   z-index: 50;
 `;
 

@@ -4,10 +4,11 @@ import { Box, Stack, Typography } from "@mui/material";
 
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 import ExerciseCard from "./ExerciseCard";
+import Loader from "./Loader";
 
-function Exercises({ exercises, setExercises, bodyPart }) {
+const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [exercisesPerPage] = 6;
+  const [exercisesPerPage] = useState(6);
 
   useEffect(() => {
     const fetchExercisesData = async () => {
@@ -45,34 +46,22 @@ function Exercises({ exercises, setExercises, bodyPart }) {
     window.scrollTo({ top: 1800, behavior: "smooth" });
   };
 
-  useEffect(() => {
-    const fetchExercisesData = async () => {
-      let exercisesData = [];
-
-      if (bodyPart === "all") {
-        exercisesData = await fetchData(
-          "https://exercisedb.p.rapidapi.com/exercises",
-          exerciseOptions
-        );
-      } else {
-        exercisesData = await fetchData(
-          `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
-          exerciseOptions
-        );
-      }
-
-      setExercises(exercisesData);
-    };
-
-    fetchExercisesData();
-  }, [bodyPart]);
+  if (!currentExercises.length) return <Loader />;
 
   return (
-    <Box id="exercises" sx={{ mt: { lg: "109px" } }} mt="50px" p="20px">
+    <Box
+      id="exercises"
+      mt="2rem"
+      p="20px"
+      width="400px"
+      maxWidth="1250px"
+      sx={{ width: { xl: "1488px" } }}
+      m="auto"
+    >
       <Typography
-        variant="h4"
         fontWeight="bold"
-        sx={{ fontSize: { lg: "44px", xs: "30px" } }}
+        sx={{ fontSize: { lg: "3.5rem", xs: "2.5" } }}
+        mt="6rem"
         mb="46px"
       >
         Showing Results
@@ -81,17 +70,22 @@ function Exercises({ exercises, setExercises, bodyPart }) {
         direction="row"
         sx={{ gap: { lg: "107px", xs: "50px" } }}
         flexWrap="wrap"
-        justifyContent="center"
+        justifyContent="space-between"
       >
         {currentExercises.map((exercise, idx) => (
           <ExerciseCard key={idx} exercise={exercise} />
         ))}
       </Stack>
-      <Stack sx={{ mt: { lg: "114px", xs: "70px" } }} alignItems="center">
+      <Stack
+        sx={{ mt: { lg: "114px", xs: "70px" } }}
+        alignItems="center"
+        fontSize="2rem"
+      >
         {exercises.length > 9 && (
           <Pagination
             color="standard"
             shape="rounded"
+            fontSize="2rem"
             defaultPage={1}
             count={Math.ceil(exercises.length / exercisesPerPage)}
             page={currentPage}
@@ -102,6 +96,6 @@ function Exercises({ exercises, setExercises, bodyPart }) {
       </Stack>
     </Box>
   );
-}
+};
 
 export default Exercises;

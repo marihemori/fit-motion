@@ -12,7 +12,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
       sx={{
         borderTop: bodyPart === item ? "4px solid #007AFF" : "",
         width: "240px",
-        height: "240px",
+        height: "90px",
         gap: "2rem",
         borderBottomLeftRadius: "20px",
       }}
