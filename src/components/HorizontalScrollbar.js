@@ -10,13 +10,14 @@ import "swiper/css/pagination";
 
 // Components
 import BodyPart from "./BodyPart";
+import ExerciseCard from "./ExerciseCard";
 
-const HorizontalScrollbar = ({ data, bodyParts, bodyPart, setBodyPart }) => {
+const HorizontalScrollbar = ({ data, bodyPart, setBodyPart, isBodyParts }) => {
   return (
     <Swiper
       modules={[Pagination, A11y]}
       spaceBetween={10}
-      slidesPerView={4}
+      slidesPerView={3}
       pagination={{ clickable: true }}
       className="mySwiper"
     >
@@ -28,11 +29,15 @@ const HorizontalScrollbar = ({ data, bodyParts, bodyPart, setBodyPart }) => {
             title={item.id || item}
             m="0 2rem"
           >
-            <BodyPart
-              item={item}
-              setBodyPart={setBodyPart}
-              bodyPart={bodyPart}
-            />
+            {isBodyParts ? (
+              <BodyPart
+                item={item}
+                setBodyPart={setBodyPart}
+                bodyPart={bodyPart}
+              />
+            ) : (
+              <ExerciseCard exercise={item} />
+            )}
           </Box>
         </SwiperSlide>
       ))}

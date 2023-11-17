@@ -45,7 +45,6 @@ function Navbar() {
         </Link>
         <Stack direction="row" gap="8rem" justifyContent="space-between">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/">Exercises</NavLink>
         </Stack>
       </Stack>
     </Header>
